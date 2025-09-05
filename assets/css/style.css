@@ -1,29 +1,13 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
-  /* gradients */
   --bg-gradient-onyx: linear-gradient(to bottom right, hsl(160, 60%, 20%) 3%, hsl(160, 60%, 12%) 97%);
   --bg-gradient-jet: linear-gradient(to bottom right, hsla(160, 60%, 18%, 0.3) 0%, hsla(160, 60%, 12%, 0) 100%), hsl(160, 60%, 15%);
   --bg-gradient-yellow-1: linear-gradient(to bottom right, hsl(160, 100%, 65%) 0%, hsla(160, 100%, 60%, 0) 50%);
   --bg-gradient-yellow-2: linear-gradient(135deg, hsla(160, 100%, 65%, 0.25) 0%, hsla(160, 100%, 60%, 0) 60%), hsl(160, 60%, 15%);
   --border-gradient-onyx: linear-gradient(to bottom right, hsl(160, 50%, 25%) 0%, hsla(160, 50%, 25%, 0) 50%);
   --text-gradient-yellow: linear-gradient(to right, hsl(160, 100%, 70%), hsl(180, 100%, 65%));
---ff-baloo: 'Baloo Bhai 2', 'Poppins' , monospace;
+--ff-baloo: 'Baloo Bhai 2', sans-serif;
+
   /* solid colors */
   --jet: hsl(160, 50%, 25%);
   --onyx: hsl(160, 60%, 20%);
@@ -32,7 +16,7 @@
   --smoky-black: hsl(160, 60%, 10%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(160, 100%, 70%); /* main accent now green-teal */
+  --orange-yellow-crayola: hsl(160, 100%, 70%); 
   --vegas-gold: hsl(180, 100%, 65%);
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
@@ -272,7 +256,13 @@ main {
   font-size: var(--fs-3);
   font-weight: var(--fw-500);
   letter-spacing: -0.25px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.info-content .titles {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .info-content .title {
@@ -282,8 +272,10 @@ main {
   font-weight: var(--fw-300);
   width: max-content;
   padding: 3px 12px;
+  margin:5px 5px;
   border-radius: 8px;
 }
+
 
 .info_more-btn {
   position: absolute;
@@ -416,7 +408,6 @@ main {
 .navbar-link:hover,
 .navbar-link:focus { color: var(--light-gray-70); }
 
-/* .navbar-link.active { color: var(--orange-yellow-crayola); } */
 
 
 
@@ -436,12 +427,6 @@ main {
 }
 
 .about-text p { margin-bottom: 15px; }
-
-
-
-/**
- * #service 
- */
 
 .service { margin-bottom: 35px; }
 
@@ -678,6 +663,50 @@ main {
  * skills 
  */
 
+ /* Title Wrapper */
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* Icon Box */
+.icon-box {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: var(--orange-yellow-crayola);
+  background: var(--border-gradient-onyx);
+  box-shadow: var(--shadow-1);
+}
+
+.icon-box::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--eerie-black-1);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.icon-box ion-icon {
+  --ionicon-stroke-width: 35px;
+  font-size: 20px;
+}
+
+/* Heading next to icon */
+.title-wrapper .h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--white-2);
+}
+
 .skills-title { margin-bottom: 20px; }
 
 .skills-list { padding: 20px; }
@@ -701,7 +730,7 @@ main {
 .skill-progress-bg {
   background: var(--jet);
   width: 100%;
-  height: 8px;
+  height: 9px;
   border-radius: 10px;
 }
 
@@ -874,91 +903,6 @@ main {
 
 
 
-
-
-/*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
-
-.blog-posts { margin-bottom: 10px; }
-
-.blog-posts-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.blog-post-item > a {
-  position: relative;
-  background: var(--border-gradient-onyx);
-  height: 100%;
-  box-shadow: var(--shadow-4);
-  border-radius: 16px;
-  z-index: 1;
-}
-
-.blog-post-item > a::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: var(--eerie-black-1);
-  z-index: -1;
-}
-
-.blog-banner-box {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.blog-banner-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition-1);
-}
-
-.blog-post-item > a:hover .blog-banner-box img { transform: scale(1.1); }
-
-.blog-content { padding: 15px; }
-
-.blog-meta {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 10px;
-}
-
-.blog-meta :is(.blog-category, time) {
-  color: var(--light-gray-70);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-}
-
-.blog-meta .dot {
-  background: var(--light-gray-70);
-  width: 4px;
-  height: 4px;
-  border-radius: 4px;
-}
-
-.blog-item-title {
-  margin-bottom: 10px;
-  line-height: 1.3;
-  transition: var(--transition-1);
-}
-
-.blog-post-item > a:hover .blog-item-title { color: var(--orange-yellow-crayola); }
-
-.blog-text {
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  line-height: 1.6;
-}
 
 
 
