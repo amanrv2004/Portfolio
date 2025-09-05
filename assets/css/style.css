@@ -23,7 +23,7 @@
   --bg-gradient-yellow-2: linear-gradient(135deg, hsla(160, 100%, 65%, 0.25) 0%, hsla(160, 100%, 60%, 0) 60%), hsl(160, 60%, 15%);
   --border-gradient-onyx: linear-gradient(to bottom right, hsl(160, 50%, 25%) 0%, hsla(160, 50%, 25%, 0) 50%);
   --text-gradient-yellow: linear-gradient(to right, hsl(160, 100%, 70%), hsl(180, 100%, 65%));
---ff-baloo: 'Baloo Bhai 2', sans-serif;
+--ff-baloo: 'Baloo Bhai 2', 'Poppins';
   /* solid colors */
   --jet: hsl(160, 50%, 25%);
   --onyx: hsl(160, 60%, 20%);
